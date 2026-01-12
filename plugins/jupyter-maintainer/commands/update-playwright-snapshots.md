@@ -39,7 +39,7 @@ Look for artifacts matching these patterns:
 Download the test report artifacts:
 
 ```bash
-gh run download {run_id} -n {artifact-name} -D /tmp/{artifact-name}
+gh run download {run_id} -n {artifact-name} -D /tmp/jp-claude-plugin-{run_id}-{artifact-name}
 ```
 
 ### 4. Identify Snapshot Mismatches
@@ -53,11 +53,11 @@ To match report PNGs to snapshot files:
 
 ```bash
 # For each PNG in the report data folder
-for f in /tmp/{report}/data/*.png; do
+for f in /tmp/jp-claude-plugin-{run_id}-{report}/data/*.png; do
   md5_report=$(md5 -q "$f" 2>/dev/null || md5sum "$f" | cut -d' ' -f1)
 
   # Compare against updated-snapshots artifact (if available)
-  for s in /tmp/{updated-snapshots}/*-snapshots/*.png; do
+  for s in /tmp/jp-claude-plugin-{run_id}-{updated-snapshots}/*-snapshots/*.png; do
     md5_snap=$(md5 -q "$s" 2>/dev/null || md5sum "$s" | cut -d' ' -f1)
     if [ "$md5_report" = "$md5_snap" ]; then
       echo "MATCH: $f -> $s"
@@ -85,7 +85,7 @@ find . -type d -name "*-snapshots" | head -10
 
 Copy matched files:
 ```bash
-cp -v /tmp/{report}/data/{hash}.png {repo}/path/to/snapshots/{snapshot-name}.png
+cp -v /tmp/jp-claude-plugin-{run_id}-{report}/data/{hash}.png {repo}/path/to/snapshots/{snapshot-name}.png
 ```
 
 ### 6. Verify Changes
