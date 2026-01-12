@@ -2,6 +2,8 @@
 
 Claude Code plugin for maintaining Jupyter ecosystem repositories.
 
+> **Note:** This is currently experimental and may be moved to https://github.com/jupyterlab/maintainer-tools.
+
 ## Installation
 
 ```bash
