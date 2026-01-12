@@ -1,0 +1,9 @@
+{
+  "name": "jupyter-maintainer",
+  "version": "1.0.0",
+  "description": "Tools for maintaining Jupyter ecosystem repositories",
+  "author": {
+    "name": "JupyterLab"
+  },
+  "license": "BSD-3-Clause"
+}

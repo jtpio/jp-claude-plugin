@@ -1,0 +1,18 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "jp-claude-plugin",
+  "version": "1.0.0",
+  "description": "Claude Code plugin for maintaining Jupyter ecosystem repositories",
+  "owner": {
+    "name": "JupyterLab",
+    "email": "jupyter@googlegroups.com"
+  },
+  "plugins": [
+    {
+      "name": "jupyter-maintainer",
+      "description": "Tools for maintaining Jupyter ecosystem repositories",
+      "source": "./plugins/jupyter-maintainer",
+      "category": "productivity"
+    }
+  ]
+}
